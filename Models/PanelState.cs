@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ScratchRentMe.Model
+namespace ScratchRentMe.Models
 {
     public class PanelState
     {

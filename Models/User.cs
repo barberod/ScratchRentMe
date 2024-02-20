@@ -1,4 +1,4 @@
-﻿namespace ScratchRentMe.Model
+﻿namespace ScratchRentMe.Models
 {
     public class User
     {

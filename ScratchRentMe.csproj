@@ -46,17 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\MainController.cs" />
-    <Compile Include="Controller\SessionController.cs" />
-    <Compile Include="Model\PanelState.cs" />
-    <Compile Include="Model\Session.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Service\PanelService.cs" />
-    <Compile Include="Service\RouteService.cs" />
-    <Compile Include="View\MainForm.cs">
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Models\PanelState.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Services\PanelService.cs" />
+    <Compile Include="Services\RouteService.cs" />
+    <Compile Include="UserControls\BlueUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BlueUserControl.Designer.cs">
+      <DependentUpon>BlueUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DummyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DummyUserControl.Designer.cs">
+      <DependentUpon>DummyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ExampleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ExampleUserControl.Designer.cs">
+      <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TinyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TinyUserControl.Designer.cs">
+      <DependentUpon>TinyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
+    <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -70,7 +95,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\MainForm.resx">
+    <EmbeddedResource Include="UserControls\BlueUserControl.resx">
+      <DependentUpon>BlueUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DummyUserControl.resx">
+      <DependentUpon>DummyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ExampleUserControl.resx">
+      <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TinyUserControl.resx">
+      <DependentUpon>TinyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -86,5 +123,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

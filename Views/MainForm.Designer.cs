@@ -38,7 +38,7 @@
             // 
             // headerPanel
             // 
-            this.headerPanel.BackColor = System.Drawing.Color.Pink;
+            this.headerPanel.BackColor = System.Drawing.Color.Fuchsia;
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -60,7 +60,7 @@
             // 
             // sidebarPanel
             // 
-            this.sidebarPanel.BackColor = System.Drawing.Color.Blue;
+            this.sidebarPanel.BackColor = System.Drawing.Color.Cyan;
             this.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebarPanel.Location = new System.Drawing.Point(0, 90);
             this.sidebarPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -72,7 +72,7 @@
             // 
             // accentPanel
             // 
-            this.accentPanel.BackColor = System.Drawing.Color.Green;
+            this.accentPanel.BackColor = System.Drawing.Color.DarkViolet;
             this.accentPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.accentPanel.Location = new System.Drawing.Point(955, 90);
             this.accentPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -85,8 +85,7 @@
             // bodyPanel
             // 
             this.bodyPanel.AutoSize = true;
-            this.bodyPanel.BackColor = System.Drawing.SystemColors.Window;
-            this.bodyPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bodyPanel.BackColor = System.Drawing.Color.Lime;
             this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bodyPanel.Location = new System.Drawing.Point(200, 90);
             this.bodyPanel.MinimumSize = new System.Drawing.Size(360, 220);
@@ -96,7 +95,7 @@
             // 
             // toastPanel
             // 
-            this.toastPanel.BackColor = System.Drawing.Color.Orange;
+            this.toastPanel.BackColor = System.Drawing.Color.Yellow;
             this.toastPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toastPanel.Location = new System.Drawing.Point(0, 60);
             this.toastPanel.Margin = new System.Windows.Forms.Padding(0);

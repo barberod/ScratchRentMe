@@ -1,7 +1,7 @@
-﻿using ScratchRentMe.Model;
+﻿using ScratchRentMe.Models;
 using System.Windows.Forms;
 
-namespace ScratchRentMe.Controller
+namespace ScratchRentMe.Controllers
 {
     public class SessionController
     {

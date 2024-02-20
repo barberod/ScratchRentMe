@@ -1,6 +1,7 @@
-﻿using ScratchRentMe.Controller;
-using ScratchRentMe.Model;
+﻿using ScratchRentMe.Controllers;
+using ScratchRentMe.Models;
 using System;
+using System.Windows.Forms;
 
 namespace ScratchRentMe
 {
@@ -12,10 +13,12 @@ namespace ScratchRentMe
         [STAThread]
         static void Main()
         {
-            Session appSession = new Session();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            MainController mainController = new MainController(appSession);
-            mainController.ShowMainForm();
+            MainController mainController = new MainController(new Session());
+            
+            Application.Run(mainController.ShowMainForm());
         }
     }
 }
