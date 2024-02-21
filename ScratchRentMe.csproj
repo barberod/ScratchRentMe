@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Models\Dummy.cs" />
     <Compile Include="Models\PanelState.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\Session.cs" />
@@ -60,6 +61,12 @@
     <Compile Include="UserControls\BlueUserControl.Designer.cs">
       <DependentUpon>BlueUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Body\ExampleBodyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Body\ExampleBodyUserControl.Designer.cs">
+      <DependentUpon>ExampleBodyUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DummyUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +78,12 @@
     </Compile>
     <Compile Include="UserControls\ExampleUserControl.Designer.cs">
       <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sidebar\MainMenuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sidebar\MainMenuUserControl.Designer.cs">
+      <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TinyUserControl.cs">
       <SubType>UserControl</SubType>
@@ -98,11 +111,17 @@
     <EmbeddedResource Include="UserControls\BlueUserControl.resx">
       <DependentUpon>BlueUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Body\ExampleBodyUserControl.resx">
+      <DependentUpon>ExampleBodyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DummyUserControl.resx">
       <DependentUpon>DummyUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ExampleUserControl.resx">
       <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Sidebar\MainMenuUserControl.resx">
+      <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\TinyUserControl.resx">
       <DependentUpon>TinyUserControl.cs</DependentUpon>
@@ -110,6 +129,7 @@
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\ScratchRentMe.Models.Session.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

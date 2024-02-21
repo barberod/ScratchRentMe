@@ -1,5 +1,7 @@
 ﻿using ScratchRentMe.Models;
 using ScratchRentMe.UserControls;
+using ScratchRentMe.UserControls.Body;
+using ScratchRentMe.UserControls.Sidebar;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -11,8 +13,15 @@ namespace ScratchRentMe.Services
         
         public static Dictionary<string, Route> Routes { get; } = new Dictionary<string, Route>
         {
+            ["mainmenu"] = new Route(typeof(MainMenuUserControl)),
+
+            ["products"] = new Route(typeof(ExampleBodyUserControl)),
+
             ["login"] = new Route(typeof(ExampleUserControl)),
-            ["dummy"] = new Route(typeof(DummyUserControl)),
+
+            ["dummy"] = new Route(
+                typeof(DummyUserControl), new Dictionary<string, object> { ["dummy"] = new Dummy() }),
+
             ["example"] = new Route(typeof(ExampleUserControl)),
             ["tiny"] = new Route(typeof(TinyUserControl)),
             ["blue"] = new Route(typeof(BlueUserControl)),
@@ -35,12 +44,20 @@ namespace ScratchRentMe.Services
                 return panel;
             }
 
-            panel.Controls.Clear();
-
             Type userControlType = route.UserControlType;
-            UserControl userControlInstance = (UserControl)Activator.CreateInstance(userControlType);
-            panel.Controls.Add(userControlInstance);
+            UserControl userControl;
 
+            if (route.Args != null)
+            {
+                userControl = (UserControl)Activator.CreateInstance(userControlType, route.Args);
+            }
+            else
+            {
+                userControl = (UserControl)Activator.CreateInstance(userControlType);
+            }
+
+            panel.Controls.Clear();
+            panel.Controls.Add(userControl);
             return panel;
         }
     }
