@@ -53,6 +53,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\PanelService.cs" />
     <Compile Include="Services\RouteService.cs" />
+    <Compile Include="Services\StyleService.cs" />
     <Compile Include="UserControls\BlueUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

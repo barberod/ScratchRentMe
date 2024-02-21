@@ -12,7 +12,6 @@ namespace ScratchRentMe.Controllers
         public MainController(Session session)
         {
             Session = session;
-            Session.PanelStates = PanelService.PanelStateGroup;
             mainForm = new MainForm(Session);
         }
 

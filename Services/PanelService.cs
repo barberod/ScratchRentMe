@@ -7,24 +7,17 @@ namespace ScratchRentMe.Services
 {
     public static class PanelService
     {
-        public static Color DefaultBackColor = SystemColors.Control;
-        public static BorderStyle DefaultBorderStyle = BorderStyle.None;
-        public static Color DefaultForeColor = SystemColors.ControlText;
-        public static bool DefaultEnablement = true;
-        public static bool DefaultVisibility = true;
+        public static string[] keys = { "header", "toast", "sidebar", "footer", "accent", "body" };
 
-        public static Color InactiveBackColor = Color.LightGray;
-        public static BorderStyle InactiveBorderStyle = BorderStyle.None;
-        public static Color InactiveForeColor = Color.DimGray;
-        public static bool InactiveEnablement = false;
-        public static bool InactiveVisibility = true;
-
-        public static Color BodyBackColor = Color.WhiteSmoke;
-        public static BorderStyle BodyBorderStyle = BorderStyle.Fixed3D;
-        public static Color BodyForeColor = Color.Black;
-
-        public static Size BodySize = new Size(755, 412);
-        public static Size BodyMinimumSize = new Size(360, 220);
+        public static Dictionary<string, PanelState> InitializeGroup(params string[] keys)
+        {
+            var dictionary = new Dictionary<string, PanelState>();
+            foreach (var key in keys)
+            {
+                dictionary[key] = null;
+            }
+            return dictionary;
+        }
 
         public static Dictionary<string, PanelState> PanelStates { get; } = new Dictionary<string, PanelState>
         {
@@ -33,23 +26,17 @@ namespace ScratchRentMe.Services
             ["body"] = BodyState()
         };
 
-        public static Dictionary<string, PanelState> PanelStateGroup { get; } = new Dictionary<string, PanelState>
+        public static Panel ApplyState(Panel panel, PanelState panelState)
         {
-            ["header"] = PanelStates["default"],
-            ["toast"] = PanelStates["default"],
-            ["sidebar"] = PanelStates["default"],
-            ["footer"] = PanelStates["default"],
-            ["accent"] = PanelStates["default"],
-            ["body"] = PanelStates["body"],
-        };
+            if (panelState == null)
+            {
+                return panel;
+            }
 
-        public static Panel ApplyState(Panel panel, PanelState newPanelState)
-        {
-            panel.BackColor = newPanelState.BackColor;
-            panel.BorderStyle = newPanelState.BorderStyle;
-            panel.ForeColor = newPanelState.ForeColor;
-            panel.Enabled = newPanelState.Enabled;
-            panel.Visible = newPanelState.Visible;
+            panel.BackColor = (Color)panelState.Args["BackColor"];
+            panel.BorderStyle = (BorderStyle)panelState.Args["BorderStyle"];
+            panel.ForeColor = (Color)panelState.Args["ForeColor"];
+            panel.Enabled = (bool)panelState.Args["Enabled"];
 
             return panel;
         }
@@ -57,36 +44,39 @@ namespace ScratchRentMe.Services
         public static PanelState BodyState()
         {
             var state = DefaultState();
-            state.BackColor = BodyBackColor;
-            state.BorderStyle = BodyBorderStyle;
-            state.ForeColor = BodyForeColor;
+            state.Args["BackColor"] = StyleService.Styles["backcolor:body"];
+            state.Args["ForeColor"] = StyleService.Styles["forecolor:body"];
             return state;
         }
 
         public static PanelState DefaultState()
         {
-            PanelState DefaultPanelState = new PanelState
+            var state = new PanelState
             {
-                BackColor = DefaultBackColor,
-                BorderStyle = DefaultBorderStyle,
-                ForeColor = DefaultForeColor,
-                Enabled = DefaultEnablement,
-                Visible = DefaultVisibility
+                Args = new Dictionary<string, object>
+            {
+                { "BackColor", StyleService.Styles["backcolor:default"] },
+                { "BorderStyle", StyleService.Styles["borderstyle:default"] },
+                { "ForeColor", StyleService.Styles["forecolor:default"] },
+                { "Enabled", StyleService.Styles["enablement:default"] }
+            }
             };
-            return DefaultPanelState;
+            return state;
         }
 
         public static PanelState InactiveState()
         {
-            PanelState InactivePanelState = new PanelState
+            var state = new PanelState
             {
-                BackColor = InactiveBackColor,
-                BorderStyle = InactiveBorderStyle,
-                ForeColor = InactiveForeColor,
-                Enabled = InactiveEnablement,
-                Visible = InactiveVisibility
+                Args = new Dictionary<string, object>
+            {
+                { "BackColor", StyleService.Styles["backcolor:inactive"] },
+                { "BorderStyle", StyleService.Styles["borderstyle:inactive"] },
+                { "ForeColor", StyleService.Styles["forecolor:inactive"] },
+                { "Enabled", StyleService.Styles["enablement:inactive"] }
+            }
             };
-            return InactivePanelState;
+            return state;
         }
     }
 }
