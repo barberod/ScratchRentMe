@@ -12,6 +12,10 @@ namespace ScratchRentMe
         {
             Session = session;
 
+            session.Routes["footer"] = RouteService.Routes["tiny"];
+
+            session.PanelStates["footer"] = PanelService.PanelStates["inactive"];
+
             InitializeComponent();
 
             AffectPanel("header");

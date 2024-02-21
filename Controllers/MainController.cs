@@ -1,5 +1,4 @@
 ﻿using ScratchRentMe.Models;
-using ScratchRentMe.Services;
 
 namespace ScratchRentMe.Controllers
 {
