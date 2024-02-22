@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ScratchRentMe.Services
 {
-    public class StyleService
+    public static class StyleService
     {
         public static Dictionary<string, object> Styles { get; } = new Dictionary<string, object>
         {
