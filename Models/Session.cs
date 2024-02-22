@@ -10,12 +10,15 @@ namespace ScratchRentMe.Models
 
         public Session()
         {
-            Routes["header"] = RouteService.Routes["blue"];
-            Routes["toast"] = RouteService.Routes["blue"];
-            Routes["sidebar"] = RouteService.Routes["mainmenu"];
-            Routes["footer"] = RouteService.Routes["blue"];
-            Routes["accent"] = RouteService.Routes["blue"];
-            Routes["body"] = RouteService.Routes["dummy"];
+            Routes = new Dictionary<string, Route>
+            {
+                { "header", RouteService.Routes["blue"] },
+                { "toast", RouteService.Routes["blue"] },
+                { "sidebar", RouteService.Routes["mainmenu"] },
+                { "footer", RouteService.Routes["blue"] },
+                { "accent", RouteService.Routes["blue"] },
+                { "body", RouteService.Routes["dummy"] }
+            };
         }
     }
 }
