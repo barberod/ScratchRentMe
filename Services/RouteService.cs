@@ -29,18 +29,6 @@ namespace ScratchRentMe.Services
             ["blue"] = new Route(typeof(BlueUserControl)),
         };
 
-        public static string[] keys = { "header", "toast", "sidebar", "footer", "accent", "body" };
-
-        public static Dictionary<string, Route> InitializeGroup(params string[] keys)
-        {
-            var dictionary = new Dictionary<string, Route>();
-            foreach (var key in keys)
-            {
-                dictionary[key] = null;
-            }
-            return dictionary;
-        }
-
         public static Panel ApplyRoute(Panel panel, Route route)
         {
             if (route == null)

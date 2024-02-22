@@ -6,7 +6,7 @@ namespace ScratchRentMe.Models
     public class Session
     {
         public User User { get; set; }
-        public Dictionary<string, Route> Routes { get; set; } = RouteService.InitializeGroup();
+        public Dictionary<string, Route> Routes { get; set; }
 
         public Session()
         {
