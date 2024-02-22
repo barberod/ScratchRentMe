@@ -7,18 +7,6 @@ namespace ScratchRentMe.Services
 {
     public static class PanelService
     {
-        public static string[] keys = { "header", "toast", "sidebar", "footer", "accent", "body" };
-
-        public static Dictionary<string, PanelState> InitializeGroup(params string[] keys)
-        {
-            var dictionary = new Dictionary<string, PanelState>();
-            foreach (var key in keys)
-            {
-                dictionary[key] = null;
-            }
-            return dictionary;
-        }
-
         public static Dictionary<string, PanelState> PanelStates { get; } = new Dictionary<string, PanelState>
         {
             ["default"] = DefaultState(),
@@ -49,34 +37,26 @@ namespace ScratchRentMe.Services
             return state;
         }
 
-        public static PanelState DefaultState()
+        public static PanelState DefaultState() => new PanelState
         {
-            var state = new PanelState
-            {
-                Args = new Dictionary<string, object>
+            Args = new Dictionary<string, object>
             {
                 { "BackColor", StyleService.Styles["backcolor:default"] },
                 { "BorderStyle", StyleService.Styles["borderstyle:default"] },
                 { "ForeColor", StyleService.Styles["forecolor:default"] },
                 { "Enabled", StyleService.Styles["enablement:default"] }
             }
-            };
-            return state;
-        }
+        };
 
-        public static PanelState InactiveState()
+        public static PanelState InactiveState() => new PanelState
         {
-            var state = new PanelState
-            {
-                Args = new Dictionary<string, object>
+            Args = new Dictionary<string, object>
             {
                 { "BackColor", StyleService.Styles["backcolor:inactive"] },
                 { "BorderStyle", StyleService.Styles["borderstyle:inactive"] },
                 { "ForeColor", StyleService.Styles["forecolor:inactive"] },
                 { "Enabled", StyleService.Styles["enablement:inactive"] }
             }
-            };
-            return state;
-        }
+        };
     }
 }

@@ -12,10 +12,6 @@ namespace ScratchRentMe
         {
             Session = session;
 
-            session.Routes["footer"] = RouteService.Routes["tiny"];
-
-            session.PanelStates["footer"] = PanelService.PanelStates["inactive"];
-
             InitializeComponent();
 
             AffectPanel("header");
@@ -28,16 +24,9 @@ namespace ScratchRentMe
 
         private void AffectPanel(string key)
         {
-            Panel panel = Controls[key + "Panel"] as Panel;
-
-            if (panel != null && Session.Routes.ContainsKey(key))
+            if (Controls[key + "Panel"] is Panel panel && Session.Routes.ContainsKey(key))
             {
                 RouteService.ApplyRoute(panel, Session.Routes[key]);
-            }
-
-            if (panel != null && Session.PanelStates.ContainsKey(key))
-            {
-                PanelService.ApplyState(panel, Session.PanelStates[key]);
             }
         }
     }
