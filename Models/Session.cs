@@ -16,8 +16,7 @@ namespace ScratchRentMe.Models
                 { "toast", RouteService.Routes["blank"] },
                 { "sidebar", RouteService.Routes["mainmenu"] },
                 { "footer", RouteService.Routes["footer"] },
-                { "accent", RouteService.Routes["accent"] },
-                { "body", RouteService.Routes["dummy"] }
+                { "accent", RouteService.Routes["accent"] }
             };
         }
     }

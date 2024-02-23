@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Models\Dummy.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PanelState.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\Session.cs" />
@@ -72,6 +72,12 @@
     </Compile>
     <Compile Include="UserControls\Body\ExampleBodyUserControl.Designer.cs">
       <DependentUpon>ExampleBodyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Body\MockPersonUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Body\MockPersonUserControl.Designer.cs">
+      <DependentUpon>MockPersonUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DummyUserControl.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="UserControls\Body\ExampleBodyUserControl.resx">
       <DependentUpon>ExampleBodyUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Body\MockPersonUserControl.resx">
+      <DependentUpon>MockPersonUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DummyUserControl.resx">
       <DependentUpon>DummyUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +168,6 @@
   <ItemGroup>
     <Content Include="assets\chaircolor.ico" />
     <None Include="Resources\nightstand.png" />
-    <None Include="Resources\chair2.png" />
-    <None Include="Resources\chair.png" />
-    <None Include="Resources\chairbw.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,13 +9,13 @@ namespace ScratchRentMe.UserControls
     public partial class DummyUserControl : UserControl
     {
         public new Dictionary<string, object> Tag { get; set; }
-        public Dummy GivenDummy { get; set; }
+        public Person GivenDummy { get; set; }
 
         public DummyUserControl(object tag)
         {
             InitializeComponent();
             Tag = (Dictionary<string, object>)tag;
-            GivenDummy = (Dummy)Tag["dummy"];
+            GivenDummy = (Person)Tag["dummy"];
             Load += DummyUserControl_Load;
         }
 

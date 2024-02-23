@@ -15,24 +15,19 @@ namespace ScratchRentMe.Services
     {
         public static Dictionary<string, Route> Routes { get; } = new Dictionary<string, Route>
         {
-            ["header"] = new Route(
-                typeof(HeaderUserControl),
-                PanelService.PanelStates["header"]
-            ),
+            ["accent"] = new Route(typeof(AccentUserControl)),
+
+            ["blank"] = new Route(typeof(BlankUserControl)),
+
+            ["footer"] = new Route(typeof(FooterUserControl)),
+
+            ["header"] = new Route(typeof(HeaderUserControl), PanelService.PanelStates["header"]),
 
             ["mainmenu"] = new Route(typeof(MainMenuUserControl)),
 
+            ["mockperson"] = new Route(typeof(MockPersonUserControl), PanelService.PanelStates["body"]),
+
             ["products"] = new Route(typeof(ExampleBodyUserControl)),
-
-            ["dummy"] = new Route(
-                typeof(DummyUserControl),
-                PanelService.PanelStates["body"],
-                new Dictionary<string, object> { ["dummy"] = new Dummy() }
-            ),
-
-            ["accent"] = new Route(typeof(AccentUserControl)),
-            ["footer"] = new Route(typeof(FooterUserControl)),
-            ["blank"] = new Route(typeof(BlankUserControl)),
         };
 
         public static Panel ApplyRoute(Panel panel, Route route)
@@ -45,17 +40,10 @@ namespace ScratchRentMe.Services
             Type userControlType = route.UserControlType;
             UserControl userControl;
 
-            if (route.Args != null)
-            {
-                userControl = (UserControl)Activator.CreateInstance(userControlType, route.Args);
-            }
-            else
-            {
-                userControl = (UserControl)Activator.CreateInstance(userControlType);
-            }
+            userControl = (UserControl)Activator.CreateInstance(userControlType, route.Args);
 
             // Make every user control fill the panel it is in
-            userControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            userControl.Dock = DockStyle.Fill;
 
             panel.Controls.Clear();
             panel.Controls.Add(userControl);

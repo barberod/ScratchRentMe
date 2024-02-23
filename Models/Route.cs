@@ -14,7 +14,7 @@ namespace ScratchRentMe.Models
         {
             UserControlType = userControlType;
             PanelState = panelState ?? PanelService.PanelStates["default"];
-            Args = args;
+            Args = args ?? new Dictionary<string, object>();
         }
     }
 }
