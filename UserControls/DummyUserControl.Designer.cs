@@ -36,29 +36,17 @@
             // 
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 49);
+            this.label1.Size = new System.Drawing.Size(300, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(3, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(452, 49);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
-            // 
             // DummyUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DummyUserControl";
-            this.Size = new System.Drawing.Size(458, 100);
+            this.Size = new System.Drawing.Size(640, 360);
             this.ResumeLayout(false);
-
         }
 
         #endregion

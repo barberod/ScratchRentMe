@@ -1,8 +1,6 @@
-﻿using System.Drawing;
-
-namespace ScratchRentMe.UserControls
+﻿namespace ScratchRentMe.UserControls
 {
-    partial class ExampleUserControl
+    partial class BlankUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,14 +30,13 @@ namespace ScratchRentMe.UserControls
         {
             this.SuspendLayout();
             // 
-            // ExampleUserControl
+            // BlankUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Black;
-            this.Name = "ExampleUserControl";
-            this.Size = new System.Drawing.Size(500, 300);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Name = "BlankUserControl";
+            this.Size = new System.Drawing.Size(5, 5);
             this.ResumeLayout(false);
 
         }

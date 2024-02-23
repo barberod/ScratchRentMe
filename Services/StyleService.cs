@@ -17,6 +17,8 @@ namespace ScratchRentMe.Services
             ["forecolor:default"] = SystemColors.ControlText,
             ["forecolor:inactive"] = Color.DimGray,
 
+            ["custom:dark"] = Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227))))),
+
             // borders
             ["borderstyle:default"] = BorderStyle.None,
             ["borderstyle:inactive"] = BorderStyle.None,
@@ -27,24 +29,27 @@ namespace ScratchRentMe.Services
             ["enablement:inactive"] = false,
 
             // sizes
-            ["size:header"] = new Size(985, 60),
-            ["size:toast"] = new Size(985, 30),
+            ["size:header"] = new Size(800, 60),
+            ["size:toast"] = new Size(800, 30),
             ["size:sidebar"] = new Size(200, 220),
-            ["size:footer"] = new Size(985, 60),
-            ["size:accent"] = new Size(30, 220),
-            ["size:body"] = new Size(755, 412),
+            ["size:footer"] = new Size(800, 60),
+            ["size:accent"] = new Size(50, 220),
+            ["size:body"] = new Size(550, 300),
 
             // minimumsizes
-            ["minimumsize:header"] = new Size(600, 60),
-            ["minimumsize:toast"] = new Size(600, 30),
-            ["minimumsize:sidebar"] = new Size(200, 220),
-            ["minimumsize:footer"] = new Size(600, 30),
-            ["minimumsize:accent"] = new Size(30, 220),
-            ["minimumsize:body"] = new Size(360, 220),
+            ["size:header"] = new Size(650, 60),
+            ["size:toast"] = new Size(650, 30),
+            ["size:sidebar"] = new Size(200, 220),
+            ["size:footer"] = new Size(650, 60),
+            ["size:accent"] = new Size(50, 220),
+            ["size:body"] = new Size(400, 220),
 
             // maximumsizes
             ["maximumsize:sidebar"] = new Size(200, 220),
             ["maximumsize:accent"] = new Size(30, 220),
+
+            // dockstyles
+            ["dockstyle:fill"] = DockStyle.Fill,
         };
     }
 }

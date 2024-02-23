@@ -55,11 +55,17 @@
     <Compile Include="Services\PanelService.cs" />
     <Compile Include="Services\RouteService.cs" />
     <Compile Include="Services\StyleService.cs" />
-    <Compile Include="UserControls\BlueUserControl.cs">
+    <Compile Include="UserControls\Accent\AccentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\BlueUserControl.Designer.cs">
-      <DependentUpon>BlueUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\Accent\AccentUserControl.Designer.cs">
+      <DependentUpon>AccentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BlankUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BlankUserControl.Designer.cs">
+      <DependentUpon>BlankUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Body\ExampleBodyUserControl.cs">
       <SubType>UserControl</SubType>
@@ -73,11 +79,17 @@
     <Compile Include="UserControls\DummyUserControl.Designer.cs">
       <DependentUpon>DummyUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ExampleUserControl.cs">
+    <Compile Include="UserControls\Footer\FooterUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ExampleUserControl.Designer.cs">
-      <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\Footer\FooterUserControl.Designer.cs">
+      <DependentUpon>FooterUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Header\HeaderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Header\HeaderUserControl.Designer.cs">
+      <DependentUpon>HeaderUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Sidebar\MainMenuUserControl.cs">
       <SubType>UserControl</SubType>
@@ -85,17 +97,13 @@
     <Compile Include="UserControls\Sidebar\MainMenuUserControl.Designer.cs">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\TinyUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\TinyUserControl.Designer.cs">
-      <DependentUpon>TinyUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,9 +115,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\BlueUserControl.resx">
-      <DependentUpon>BlueUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Accent\AccentUserControl.resx">
+      <DependentUpon>AccentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BlankUserControl.resx">
+      <DependentUpon>BlankUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Body\ExampleBodyUserControl.resx">
       <DependentUpon>ExampleBodyUserControl.cs</DependentUpon>
@@ -117,17 +129,18 @@
     <EmbeddedResource Include="UserControls\DummyUserControl.resx">
       <DependentUpon>DummyUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ExampleUserControl.resx">
-      <DependentUpon>ExampleUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Footer\FooterUserControl.resx">
+      <DependentUpon>FooterUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Header\HeaderUserControl.resx">
+      <DependentUpon>HeaderUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Sidebar\MainMenuUserControl.resx">
       <DependentUpon>MainMenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\TinyUserControl.resx">
-      <DependentUpon>TinyUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="Properties\DataSources\ScratchRentMe.Models.Session.datasource" />
     <None Include="Properties\Settings.settings">
@@ -142,6 +155,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\chaircolor.ico" />
+    <None Include="Resources\nightstand.png" />
+    <None Include="Resources\chair2.png" />
+    <None Include="Resources\chair.png" />
+    <None Include="Resources\chairbw.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

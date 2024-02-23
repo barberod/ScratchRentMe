@@ -94,13 +94,13 @@
             // ExampleBodyUserControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(1510, 824);
-            this.MinimumSize = new System.Drawing.Size(755, 412);
+            this.MinimumSize = new System.Drawing.Size(400, 220);
             this.Name = "ExampleBodyUserControl";
-            this.Size = new System.Drawing.Size(755, 412);
+            this.Size = new System.Drawing.Size(550, 300);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -12,11 +12,11 @@ namespace ScratchRentMe.Models
         {
             Routes = new Dictionary<string, Route>
             {
-                { "header", RouteService.Routes["blue"] },
-                { "toast", RouteService.Routes["blue"] },
+                { "header", RouteService.Routes["header"] },
+                { "toast", RouteService.Routes["blank"] },
                 { "sidebar", RouteService.Routes["mainmenu"] },
-                { "footer", RouteService.Routes["blue"] },
-                { "accent", RouteService.Routes["blue"] },
+                { "footer", RouteService.Routes["footer"] },
+                { "accent", RouteService.Routes["accent"] },
                 { "body", RouteService.Routes["dummy"] }
             };
         }

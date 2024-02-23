@@ -1,6 +1,6 @@
-﻿namespace ScratchRentMe.UserControls
+﻿namespace ScratchRentMe.UserControls.Footer
 {
-    partial class TinyUserControl
+    partial class FooterUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,19 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // TinyUserControl
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(0, 50);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.label1.Size = new System.Drawing.Size(225, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Made with ❤️ by Group 5";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FooterUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.Name = "TinyUserControl";
-            this.Size = new System.Drawing.Size(10, 10);
+            this.Controls.Add(this.label1);
+            this.Name = "FooterUserControl";
+            this.Size = new System.Drawing.Size(225, 90);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -22,7 +22,6 @@ namespace ScratchRentMe.UserControls
         private void DummyUserControl_Load(object sender, EventArgs e)
         {
             label1.Text = GivenDummy.Name;
-            label2.Text = GivenDummy.Id.ToString();
         }
     }
 }

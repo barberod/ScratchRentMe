@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ScratchRentMe.UserControls
 {
-    public partial class ExampleUserControl : UserControl
+    public partial class BlankUserControl : UserControl
     {
-        public ExampleUserControl()
+        public BlankUserControl()
         {
             InitializeComponent();
         }

@@ -11,7 +11,8 @@ namespace ScratchRentMe.Services
         {
             ["default"] = DefaultState(),
             ["inactive"] = InactiveState(),
-            ["body"] = BodyState()
+            ["body"] = BodyState(),
+            ["header"] = HeaderState()
         };
 
         public static Panel ApplyState(Panel panel, PanelState panelState)
@@ -34,6 +35,13 @@ namespace ScratchRentMe.Services
             var state = DefaultState();
             state.Args["BackColor"] = StyleService.Styles["backcolor:body"];
             state.Args["ForeColor"] = StyleService.Styles["forecolor:body"];
+            return state;
+        }
+
+        public static PanelState HeaderState()
+        {
+            var state = DefaultState();
+            state.Args["BackColor"] = StyleService.Styles["custom:dark"];
             return state;
         }
 

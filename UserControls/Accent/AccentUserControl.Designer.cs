@@ -1,6 +1,6 @@
-﻿namespace ScratchRentMe.UserControls
+﻿namespace ScratchRentMe.UserControls.Accent
 {
-    partial class BlueUserControl
+    partial class AccentUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,13 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // BlueUserControl
+            // AccentUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Blue;
-            this.Name = "BlueUserControl";
-            this.Size = new System.Drawing.Size(20, 20);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = global::ScratchRentMe.Properties.Resources.nightstand;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.DoubleBuffered = true;
+            this.Name = "AccentUserControl";
+            this.Size = new System.Drawing.Size(50, 220);
             this.ResumeLayout(false);
 
         }

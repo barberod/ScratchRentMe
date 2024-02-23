@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ScratchRentMe.UserControls
+namespace ScratchRentMe.UserControls.Header
 {
-    public partial class TinyUserControl : UserControl
+    public partial class HeaderUserControl : UserControl
     {
-        public TinyUserControl()
+        public HeaderUserControl()
         {
             InitializeComponent();
         }
