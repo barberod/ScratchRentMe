@@ -79,12 +79,6 @@
     <Compile Include="UserControls\Body\MockPersonUserControl.Designer.cs">
       <DependentUpon>MockPersonUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\DummyUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\DummyUserControl.Designer.cs">
-      <DependentUpon>DummyUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\Footer\FooterUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,9 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Body\MockPersonUserControl.resx">
       <DependentUpon>MockPersonUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\DummyUserControl.resx">
-      <DependentUpon>DummyUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Footer\FooterUserControl.resx">
       <DependentUpon>FooterUserControl.cs</DependentUpon>

@@ -40,7 +40,8 @@ namespace ScratchRentMe.Services
             Type userControlType = route.UserControlType;
             UserControl userControl;
 
-            userControl = (UserControl)Activator.CreateInstance(userControlType, route.Args);
+            // route.Args is never null because the Route constructor initializes it
+            userControl = (UserControl)Activator.CreateInstance(userControlType, route.Target, route.Args);
 
             // Make every user control fill the panel it is in
             userControl.Dock = DockStyle.Fill;

@@ -1,6 +1,5 @@
 ﻿using ScratchRentMe.Models;
 using ScratchRentMe.Services;
-using System.Collections.Generic;
 
 namespace ScratchRentMe.Controllers
 {
@@ -14,10 +13,10 @@ namespace ScratchRentMe.Controllers
         {
             Session = session;
 
-            session.Routes["header"].Args.Add("user", new User());
+            session.Routes["header"].Target = new User();
 
             session.Routes.Add("body", RouteService.Routes["mockperson"]);
-            session.Routes["body"].Args.Add("person", new Person());
+            session.Routes["body"].Target = new Person();
 
             mainForm = new MainForm(Session);
         }

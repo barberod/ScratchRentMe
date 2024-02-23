@@ -7,21 +7,21 @@ namespace ScratchRentMe.UserControls.Body
 {
     public partial class MockPersonUserControl : UserControl
     {
-        public new Dictionary<string, object> Tag { get; set; }
-        public Person GivenPerson { get; set; }
+        public Person Person { get; set; }
+        public Dictionary<string, object> Args { get; set; }
 
-        public MockPersonUserControl(object tag)
+        public MockPersonUserControl(object target = null, Dictionary<string, object> args = null)
         {
             InitializeComponent();
-            Tag = (Dictionary<string, object>)tag;
-            GivenPerson = (Person)Tag["person"];
+            Person = (Person)target;
+            Args = args;
             Load += MockPersonUserControl_Load;
         }
 
         private void MockPersonUserControl_Load(object sender, EventArgs e)
         {
-            label1.Text = GivenPerson.Id.ToString();
-            label2.Text = GivenPerson.Name;
+            label1.Text = Person.Id.ToString();
+            label2.Text = Person.Name;
         }
     }
 }

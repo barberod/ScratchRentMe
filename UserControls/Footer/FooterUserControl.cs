@@ -1,10 +1,11 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ScratchRentMe.UserControls.Footer
 {
     public partial class FooterUserControl : UserControl
     {
-        public FooterUserControl(object tag = null)
+        public FooterUserControl(object target = null, Dictionary<string, object> args = null)
         {
             InitializeComponent();
         }

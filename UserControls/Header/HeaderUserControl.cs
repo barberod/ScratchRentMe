@@ -7,20 +7,20 @@ namespace ScratchRentMe.UserControls.Header
 {
     public partial class HeaderUserControl : UserControl
     {
-        public new Dictionary<string, object> Tag { get; set; }
-        public User GivenUser { get; set; }
+        public User User { get; set; }
+        public Dictionary<string, object> Args { get; set; }
 
-        public HeaderUserControl(object tag)
+        public HeaderUserControl(object target = null, Dictionary<string, object> args = null)
         {
             InitializeComponent();
-            Tag = (Dictionary<string, object>)tag;
-            GivenUser = (User)Tag["user"];
+            User = (User)target;
+            Args = args;
             Load += HeaderUserControl_Load;
         }
 
         private void HeaderUserControl_Load(object sender, EventArgs e)
         {
-            label1.Text = GivenUser.Name;
+            label1.Text = User.Name;
         }
     }
 }
