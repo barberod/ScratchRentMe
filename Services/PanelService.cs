@@ -7,64 +7,45 @@ namespace ScratchRentMe.Services
 {
     public static class PanelService
     {
-        public static Dictionary<string, PanelState> PanelStates { get; } = new Dictionary<string, PanelState>
+        public static Dictionary<string, PanelStyle> PanelStates { get; } = new Dictionary<string, PanelStyle>
         {
-            ["default"] = DefaultState(),
-            ["inactive"] = InactiveState(),
-            ["body"] = BodyState(),
-            ["header"] = HeaderState()
+            ["default"] = new PanelStyle(
+                    (Color)StyleService.Styles["backcolor:default"],
+                    (BorderStyle)StyleService.Styles["borderstyle:default"],
+                    (Color)StyleService.Styles["forecolor:default"]
+                ),
+
+            ["inactive"] = new PanelStyle(
+                    (Color)StyleService.Styles["backcolor:inactive"],
+                    (BorderStyle)StyleService.Styles["borderstyle:inactive"],
+                    (Color)StyleService.Styles["forecolor:inactive"]
+                ),
+
+            ["body"] = new PanelStyle(
+                    (Color)StyleService.Styles["backcolor:body"],
+                    (BorderStyle)StyleService.Styles["borderstyle:body"],
+                    (Color)StyleService.Styles["forecolor:body"]
+                ),
+
+            ["header"] = new PanelStyle(
+                    (Color)StyleService.Styles["custom:dark"],
+                    (BorderStyle)StyleService.Styles["borderstyle:default"],
+                    (Color)StyleService.Styles["forecolor:default"]
+                )
         };
 
-        public static Panel ApplyState(Panel panel, PanelState panelState)
+        public static Panel ApplyStyles(Panel panel, Route route)
         {
-            if (panelState == null)
+            if (route == null)
             {
                 return panel;
             }
 
-            panel.BackColor = (Color)panelState.Args["BackColor"];
-            panel.BorderStyle = (BorderStyle)panelState.Args["BorderStyle"];
-            panel.ForeColor = (Color)panelState.Args["ForeColor"];
-            panel.Enabled = (bool)panelState.Args["Enabled"];
+            panel.BackColor = route.PanelStyle.BackColor;
+            panel.BorderStyle = route.PanelStyle.BorderStyle;
+            panel.ForeColor = route.PanelStyle.ForeColor;
 
             return panel;
         }
-
-        public static PanelState BodyState()
-        {
-            var state = DefaultState();
-            state.Args["BackColor"] = StyleService.Styles["backcolor:body"];
-            state.Args["ForeColor"] = StyleService.Styles["forecolor:body"];
-            return state;
-        }
-
-        public static PanelState HeaderState()
-        {
-            var state = DefaultState();
-            state.Args["BackColor"] = StyleService.Styles["custom:dark"];
-            return state;
-        }
-
-        public static PanelState DefaultState() => new PanelState
-        {
-            Args = new Dictionary<string, object>
-            {
-                { "BackColor", StyleService.Styles["backcolor:default"] },
-                { "BorderStyle", StyleService.Styles["borderstyle:default"] },
-                { "ForeColor", StyleService.Styles["forecolor:default"] },
-                { "Enabled", StyleService.Styles["enablement:default"] }
-            }
-        };
-
-        public static PanelState InactiveState() => new PanelState
-        {
-            Args = new Dictionary<string, object>
-            {
-                { "BackColor", StyleService.Styles["backcolor:inactive"] },
-                { "BorderStyle", StyleService.Styles["borderstyle:inactive"] },
-                { "ForeColor", StyleService.Styles["forecolor:inactive"] },
-                { "Enabled", StyleService.Styles["enablement:inactive"] }
-            }
-        };
     }
 }

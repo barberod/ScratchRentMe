@@ -24,10 +24,6 @@ namespace ScratchRentMe.Services
             ["borderstyle:inactive"] = BorderStyle.None,
             ["borderstyle:body"] = BorderStyle.Fixed3D,
 
-            // enablement
-            ["enablement:default"] = true,
-            ["enablement:inactive"] = false,
-
             // sizes
             ["size:header"] = new Size(800, 60),
             ["size:toast"] = new Size(800, 30),
@@ -46,10 +42,7 @@ namespace ScratchRentMe.Services
 
             // maximumsizes
             ["maximumsize:sidebar"] = new Size(200, 220),
-            ["maximumsize:accent"] = new Size(30, 220),
-
-            // dockstyles
-            ["dockstyle:fill"] = DockStyle.Fill,
+            ["maximumsize:accent"] = new Size(30, 220)
         };
     }
 }

@@ -48,7 +48,7 @@ namespace ScratchRentMe.Services
 
             panel.Controls.Clear();
             panel.Controls.Add(userControl);
-            PanelService.ApplyState(panel, route.PanelState);
+            PanelService.ApplyStyles(panel, route);
             return panel;
         }
     }
