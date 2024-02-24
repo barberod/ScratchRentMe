@@ -7,7 +7,7 @@ namespace ScratchRentMe.Services
 {
     public static class PanelService
     {
-        public static Dictionary<string, PanelStyle> PanelStates { get; } = new Dictionary<string, PanelStyle>
+        public static Dictionary<string, PanelStyle> PanelStyles { get; } = new Dictionary<string, PanelStyle>
         {
             ["default"] = new PanelStyle(
                     (Color)StyleService.Styles["backcolor:default"],

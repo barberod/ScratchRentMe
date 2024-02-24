@@ -10,7 +10,7 @@ namespace ScratchRentMe.UserControls.Body
         public Person Person { get; set; }
         public Dictionary<string, object> Args { get; set; }
 
-        public MockPersonUserControl(object target = null, Dictionary<string, object> args = null)
+        public MockPersonUserControl(Session session = null, object target = null, Dictionary<string, object> args = null)
         {
             InitializeComponent();
             Person = (Person)target;

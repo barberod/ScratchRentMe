@@ -14,7 +14,7 @@ namespace ScratchRentMe.Models
         public Route(Type userControlType, PanelStyle panelStyle = null, object target = null, Dictionary<string, object> args = null)
         {
             UserControlType = userControlType;
-            PanelStyle = panelStyle ?? PanelService.PanelStates["default"];
+            PanelStyle = panelStyle ?? PanelService.PanelStyles["default"];
             Target = target;
             Args = args ?? new Dictionary<string, object>();
         }

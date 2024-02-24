@@ -21,16 +21,16 @@ namespace ScratchRentMe.Services
 
             ["footer"] = new Route(typeof(FooterUserControl)),
 
-            ["header"] = new Route(typeof(HeaderUserControl), PanelService.PanelStates["header"]),
+            ["header"] = new Route(typeof(HeaderUserControl), PanelService.PanelStyles["header"]),
 
             ["mainmenu"] = new Route(typeof(MainMenuUserControl)),
 
-            ["mockperson"] = new Route(typeof(MockPersonUserControl), PanelService.PanelStates["body"]),
+            ["mockperson"] = new Route(typeof(MockPersonUserControl), PanelService.PanelStyles["body"]),
 
             ["products"] = new Route(typeof(ExampleBodyUserControl)),
         };
 
-        public static Panel ApplyRoute(Panel panel, Route route)
+        public static Panel ApplyRoute(Session session, Panel panel, Route route)
         {
             if (route == null)
             {
@@ -41,7 +41,7 @@ namespace ScratchRentMe.Services
             UserControl userControl;
 
             // route.Args is never null because the Route constructor initializes it
-            userControl = (UserControl)Activator.CreateInstance(userControlType, route.Target, route.Args);
+            userControl = (UserControl)Activator.CreateInstance(userControlType, session, route.Target, route.Args);
 
             // Make every user control fill the panel it is in
             userControl.Dock = DockStyle.Fill;

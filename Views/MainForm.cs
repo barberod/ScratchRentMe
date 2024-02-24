@@ -26,7 +26,7 @@ namespace ScratchRentMe
         {
             if (Controls[key + "Panel"] is Panel panel && Session.Routes.ContainsKey(key))
             {
-                RouteService.ApplyRoute(panel, Session.Routes[key]);
+                RouteService.ApplyRoute(Session, panel, Session.Routes[key]);
             }
         }
     }

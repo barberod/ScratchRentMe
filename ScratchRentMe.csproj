@@ -49,6 +49,7 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Models\PanelStyle.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Route.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\User.cs" />

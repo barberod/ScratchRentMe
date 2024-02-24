@@ -48,6 +48,7 @@
             this.productsButton.TabIndex = 0;
             this.productsButton.Text = "Products";
             this.productsButton.UseVisualStyleBackColor = true;
+            this.productsButton.Click += new System.EventHandler(this.productsButton_Click);
             // 
             // rentalsButton
             // 
@@ -61,6 +62,7 @@
             this.rentalsButton.TabIndex = 1;
             this.rentalsButton.Text = "Rentals";
             this.rentalsButton.UseVisualStyleBackColor = true;
+            this.rentalsButton.Click += new System.EventHandler(this.rentalsButton_Click);
             // 
             // returnsButton
             // 
