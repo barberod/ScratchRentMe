@@ -46,10 +46,30 @@ namespace ScratchRentMe.Services
             // Make every user control fill the panel it is in
             userControl.Dock = DockStyle.Fill;
 
+            // Make every page in every tab control fill its container
+            SetDockFill(userControl);
+
             panel.Controls.Clear();
             panel.Controls.Add(userControl);
             PanelService.ApplyStyles(panel, route);
             return panel;
+        }
+
+        private static void SetDockFill(Control parentControl)
+        {
+            foreach (Control control in parentControl.Controls)
+            {
+                if (control is TabControl tabControl)
+                {
+                    tabControl.Dock = DockStyle.Fill;
+
+                    foreach (TabPage tabPage in tabControl.TabPages)
+                    {
+                        tabPage.Dock = DockStyle.Fill;
+                    }
+                }
+                SetDockFill(control);
+            }
         }
     }
 }
