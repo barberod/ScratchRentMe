@@ -17,7 +17,7 @@ namespace ScratchRentMe
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainController mainController = new MainController(new Session());
-            
+        
             Application.Run(mainController.ShowMainForm());
         }
     }

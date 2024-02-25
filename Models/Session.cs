@@ -7,6 +7,7 @@ namespace ScratchRentMe.Models
     {
         public User User { get; set; }
         public Dictionary<string, Route> Routes { get; set; }
+        public MainForm MainForm { get; set; }
 
         public Session()
         {
@@ -16,8 +17,14 @@ namespace ScratchRentMe.Models
                 { "toast", RouteService.Routes["blank"] },
                 { "sidebar", RouteService.Routes["mainmenu"] },
                 { "footer", RouteService.Routes["footer"] },
-                { "accent", RouteService.Routes["accent"] }
+                { "accent", RouteService.Routes["accent"] },
+                { "body", RouteService.Routes["mockperson"] }
             };
+
+            Routes["header"].Target = new User();
+            Routes["body"].Target = new Person();
+
+            MainForm = new MainForm(this);
         }
     }
 }

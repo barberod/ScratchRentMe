@@ -11,14 +11,27 @@ namespace ScratchRentMe
         public MainForm(Session session)
         {
             Session = session;
-
             InitializeComponent();
+            SetupForm();
+        }
 
+        public void SetupForm()
+        {
             AffectPanel("header");
             AffectPanel("toast");
             AffectPanel("sidebar");
             AffectPanel("footer");
             AffectPanel("accent");
+            AffectPanel("body");
+        }
+
+        public void RefreshForm()
+        {
+            Invalidate();
+            Refresh();
+
+            AffectPanel("toast");
+            AffectPanel("sidebar");
             AffectPanel("body");
         }
 
